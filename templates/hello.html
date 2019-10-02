@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Pozdravy</h1>
+    {% if name %}
+        <ol>
+        {% for i in range(count) %}
+            <li>Ahoj {{ name|fitmail }}!</li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p>Neznámé nezdravím!</p>
+    {% endif %}
+    <a href="{{ url_for('mipyt.index') }}">Zpět</a>
+{% endblock %}
